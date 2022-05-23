@@ -4,6 +4,7 @@ const priceCaseHtml = document.querySelector('.price-case');
 const openings = document.querySelector('.total-open');
 const profitHtml = document.querySelector('span');
 const openCaseHtml = document.querySelector('.open');
+const dropCount = document.querySelectorAll('.drop-count input');
 
 let arr = [];
 let priceCase = 0;
@@ -80,13 +81,18 @@ openCaseHtml.addEventListener('click', () => {
     for (let i = 0; i < counts.length; i++) {
         counts[i] = 0;
     }
+    for (let i = 0; i < counts.length; i++) {
+        dropCount[i].valueAsNumber = 0;
+    }
     profitHtml.innerHTML = 0;
     sum = 0;
+
     for (let i = 0; i < totalOpenings; i++) {
         let getIndex = openCase(arr);
         for (let i = 0; i < counts.length; i++) {
             if (getIndex === arr[i]) {
                 counts[i] += 1 * arr[i].price;
+                dropCount[i].valueAsNumber += 1;
             }
         }
     }
@@ -94,6 +100,7 @@ openCaseHtml.addEventListener('click', () => {
     for (let i = 0; i < counts.length; i++) {
         sum += counts[i];
     }
+
     let totalOpenPrice = priceCase * totalOpenings;
     profitHtml.innerHTML = totalOpenPrice - sum;
 });

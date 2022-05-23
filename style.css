@@ -30,18 +30,25 @@
 .price-case {
    width: 15%;
 }
-.add {
+.said-bar-info {
+   position: absolute;
+   transform: translate(-100%, 20%);
+   max-height: 750px;
+   overflow-y: auto;
+}
+.drop-count {
+   margin-bottom: 20px;
+}
+.drop-count input {
    width: 30%;
-   margin-bottom: 30px;
-   margin-left: auto;
-   margin-right: auto;
-   cursor: pointer;
+   text-align: center;
+   padding: 5px;
 }
 .skin-wrapper {
    display: flex;
    flex-direction: column;
    align-items: center;
-   max-height: 800px;
+   max-height: 680px;
    overflow-y: auto;
 }
 .skin {
@@ -54,4 +61,3 @@
    margin-right: 30px;
    margin-left: 20px;
 }
-
